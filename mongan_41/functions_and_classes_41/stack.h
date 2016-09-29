@@ -18,34 +18,35 @@ public:
     StackNode<T> * get_next() const { return next; }    //method does not change the state of the object
 };
 
-
 template <class T>
 class Stack {
 private:
     StackNode<T> * head;
+    StackNode<T> * get_head() { return this->head; }
 public:
     Stack(): head(nullptr) {}
-    ~Stack() {}
-    //ToDo: write destructor -> if an address is in the stack when the stack is destroyed, the object at that address
-    //should be destroyed
-
-
-    void push(const T * t) {
-        this->head = new StackNode<T>(t, this->head);
+    ~Stack() {
+        while (!this->is_empty()) {
+            //The only dynamically allocated mem in StackNode is the object at data
+            const T * data = this->pop();
+            delete data;
+        }
     }
+
+    bool is_empty() const { return !this->head; }
+
+    void push(const T * t) { this->head = new StackNode<T>(t, this->head); }
 
     const T * pop() {
 
-        if (this->head == nullptr) {
+        if (this->is_empty()) {
             return nullptr;
         } else {
             //at least 1 node in stack
             StackNode<T> * old_head = this->head;
-
             this->head = old_head->get_next();          //possibly null
             return old_head->get_data();
         }
-
     }
 
     const T * top() const {
@@ -55,13 +56,6 @@ public:
             return nullptr;
         }
     }
-
-    bool is_empty() const {
-        return !this->head;
-    }
-
-    StackNode<T> * get_head() { return this->head; }
-
 };
 
 #endif //MONGAN_41_STACK_H
