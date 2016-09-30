@@ -16,7 +16,9 @@ TEST(test_mongan_41, test_new_stack_is_empty) {
 
 TEST(test_mongan_41, test_top) {
     printf("\ntest_top: beg\n");
-    //TODO: test the value of top
+    Stack<double> * stack = new Stack<double>();
+    stack->push(new double(1.23));
+    ASSERT_EQ(*stack->top(), 1.23);
     printf("test_top: end\n");
 }
 

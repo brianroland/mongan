@@ -8,3 +8,6 @@ add_executable(run_mongan ${SOURCE_FILES})
 
 include_directories(mongan_41)
 add_subdirectory(mongan_41)
+
+include_directories(mongan_42)
+add_subdirectory(mongan_42)
