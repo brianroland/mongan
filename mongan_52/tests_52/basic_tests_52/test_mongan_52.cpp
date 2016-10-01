@@ -2,7 +2,6 @@
 // Created by Christopher Roland on 10/1/16.
 //
 #include <iostream>
-#include <string>
 #include "gtest/gtest.h"
 #include <functions_and_classes_51/tree_height.h>
 #include <functions_and_classes_52/preorder_traversal.h>
@@ -13,7 +12,6 @@ TEST(test_mongan_52, hello_world) {
     printf("\nhello_world: beg\n");
     printf("hello_world: end\n");
 }
-
 
 TEST(test_mongan_52, preorder_traversal) {
     printf("\npreorder_traversal: beg\n");
