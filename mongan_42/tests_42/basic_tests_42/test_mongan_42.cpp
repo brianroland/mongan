@@ -65,10 +65,15 @@ TEST(test_mongan_42, remove_from_middle) {
     list->InsertInFront(c);
     ASSERT_EQ(*list->GetDataAtFront(), *c);
 
+    //Test find correct address
     FindResult<double> * find_result_b = list->Find(b);
     ASSERT_EQ(find_result_b->found_, true);
-    const SingleLinkNode<double> * middle = find_result_b->target_;
+    SingleLinkNode<double> * middle = find_result_b->target_;
     ASSERT_EQ(middle->data(),b);
+
+    //Test after removing address, the address not found
+    list->Remove(middle);
+    ASSERT_EQ(list->Find(b)->found_, false);
 
     printf("remove_from_middle: end\n");
 }

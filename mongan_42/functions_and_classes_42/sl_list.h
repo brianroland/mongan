@@ -17,6 +17,7 @@ public:
     SingleLinkNode(const T *data, SingleLinkNode *next) : data_(data), next_(next) {}
     ~SingleLinkNode() {
         printf("SingleLinkNode:~SingleLinkNode(): beg\n");
+        std::cout << "Before delete data=" << *this->data_ << std::endl;
         delete this->data_;              //the node is responsible for the memory at data
         printf("SingleLinkNode:~SingleLinkNode(): end\n");
     }
@@ -39,9 +40,9 @@ public:
 template<class T>
 struct FindResult {
     bool found_;
-    const SingleLinkNode<T> * target_;
-    const SingleLinkNode<T> * previous_;
-    FindResult(bool found, const SingleLinkNode<T> * target, const SingleLinkNode<T> * previous)
+    SingleLinkNode<T> * target_;
+    SingleLinkNode<T> * previous_;
+    FindResult(bool found, SingleLinkNode<T> * target, SingleLinkNode<T> * previous)
             : found_(found), target_(target), previous_(previous) {}
 };
 
