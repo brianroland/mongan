@@ -11,3 +11,6 @@ add_subdirectory(mongan_41)
 
 include_directories(mongan_42)
 add_subdirectory(mongan_42)
+
+include_directories(mongan_51)
+add_subdirectory(mongan_51)
