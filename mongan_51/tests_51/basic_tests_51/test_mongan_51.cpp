@@ -28,8 +28,8 @@ TEST(test_mongan_51, test_height) {
     Node<double> * a = new Node<double>(new double(50), c, d);
     Node<double> * root = new Node<double>(new double(60), a, b);
 
-    ASSERT_EQ(height(e), 0);
-    ASSERT_EQ(height(c), 1);
-    ASSERT_EQ(height(root), 3);
+    ASSERT_EQ(height(e), 1);
+    ASSERT_EQ(height(c), 2);
+    ASSERT_EQ(height(root), 4);
     printf("test_height: end\n");
 }

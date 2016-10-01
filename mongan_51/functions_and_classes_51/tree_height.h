@@ -22,19 +22,13 @@ int MaxInt(int a, int b) {
 
 template<class T>
 int height(const Node<T> * root) {
-    assert(root!=nullptr);
 
-    int height_via_left_subtree=0;
-    int height_via_right_subtree=0;
+    if (root==nullptr) {return 0;}
 
-    if (root->left_!=nullptr) {
-        height_via_left_subtree = 1 + height(root->left_);
-    }
-    if (root->right_!=nullptr) {
-        height_via_right_subtree = 1 + height(root->right_);
-    }
+    int height_of_left_subtree = height(root->left_);
+    int height_of_right_subtree = height(root->right_);
 
-    int larger_height = MaxInt(height_via_left_subtree, height_via_right_subtree);
+    int larger_height = 1 + MaxInt(height_of_left_subtree, height_of_right_subtree);
 
     return larger_height;
 }
