@@ -7,11 +7,13 @@
 #ifndef MONGAN_41_STACK_H
 #define MONGAN_41_STACK_H
 
+
 template <class T>
 class StackNode {
 private:
     StackNode<T> * next;
     const T * data;       //holds the address of a const object, the object cannot be overwritten
+
 public:
     StackNode(const T * data_, StackNode<T> * next_): data(data_), next(next_) {}
     ~StackNode() {}
