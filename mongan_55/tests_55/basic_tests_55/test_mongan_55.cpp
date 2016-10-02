@@ -5,7 +5,7 @@
 #include <algorithm>
 #include "gtest/gtest.h"
 #include <functions_and_classes_51/tree_height.h>
-#include <functions_and_classes_55/binary_tree_to_heap.h>
+#include <functions_and_classes_55/first_nonrepeat.h>
 #include <functions_and_classes_52/preorder_traversal.h>
 
 using namespace std;
