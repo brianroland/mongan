@@ -18,7 +18,10 @@ struct Node{
     string * state_;
     Node(T * data, Node<T> * left=nullptr, Node<T> * right=nullptr)
             : data_(data), left_(left), right_(right), state_(new string("")) {}
-    ~Node() { delete state_; }
+    ~Node() {
+        delete data_;               //Node is responsible for the memory at data_
+        delete state_;
+    }
 };
 
 int MaxInt(int a, int b) { return (b>a) ? b : a; }
