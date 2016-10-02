@@ -14,6 +14,9 @@ using namespace std;
 template<class T>
 void IterativePreorderWalk(Node<T> * root) {
 
+    if (root==nullptr) { return; }
+
+
     stack<Node<T> *> * my_stack = new stack<Node<T> *>();
 
     my_stack->push(root);
@@ -41,5 +44,31 @@ void IterativePreorderWalk(Node<T> * root) {
 
     delete my_stack;
 }
+
+template<class T>
+void IterativePreorderWalk_Solution(Node<T> * root) {
+
+    if (root==nullptr) { return; }
+
+
+    stack<Node<T> *> * my_stack = new stack<Node<T> *>();
+
+    my_stack->push(root);
+
+
+    while(!my_stack->empty()) {
+
+        Node<T> * top = my_stack->top();
+        my_stack->pop();
+        cout << *top->data_ << endl;
+
+        if (top->right_ != nullptr) { my_stack->push(top->right_); }
+        if (top->left_ != nullptr) { my_stack->push(top->left_); }
+
+    }
+
+    delete my_stack;
+}
+
 
 #endif //MONGAN_ITERATIVE_PREORDER_TRAVERSAL_H

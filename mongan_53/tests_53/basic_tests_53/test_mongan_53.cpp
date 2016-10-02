@@ -37,7 +37,11 @@ TEST(test_mongan_53, test_iterative_preorder_walk) {
     Node<string> * b = new Node<string>(new string("blueberry"), d, e);
     Node<string> * a = new Node<string>(new string("apple"), b, c);
 
+    cout << "----" << endl;
     IterativePreorderWalk(a);
+    cout << "----" << endl;
+    IterativePreorderWalk_Solution(a);
+    cout << "----" << endl;
 
     printf("test_iterative_preorder_walk\n");
 }
