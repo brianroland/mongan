@@ -1,5 +1,6 @@
 
 
+#include <thread>
 #include "gtest/gtest.h"
 #include "producer_consumer.h"
 
@@ -12,12 +13,13 @@ TEST(test_buffer_0, test_buffer) {
     printf("\ntest_buffer_0: beg\n");
     IntBuffer * b = new IntBuffer(8);
     int i_in = 10;
-    int index_in = b->put(i_in);
-    int i_out = b->get(index_in);
+    b->put(i_in);
+    int i_out = b->get();
     ASSERT_EQ(i_out, i_in);
 
     int i_in_1 = 11;
-    int i_out_1 = b->get(b->put(i_in_1));
+    b->put(i_in_1);
+    int i_out_1 = b->get();
     ASSERT_EQ(i_out_1, i_in_1);
 
     delete b;
@@ -25,16 +27,42 @@ TEST(test_buffer_0, test_buffer) {
 }
 
 
-TEST(test_producer_consumer_0, test_producer_consumer) {
-    printf("\ntest_producer_consumer_0: beg\n");
-    IntBuffer * b = new IntBuffer();
 
-    int index_0 = produce(b);
-    consume(b, index_0);
 
-    int index_1 = produce(b);
-    consume(b, index_1);
+TEST (print_time, print_time) {
+    printf("\nprint_time: beg\n");
+    thread t1(print_time);
+    thread t2(print_time);
 
-    delete b;
-    printf("test_producer_consumer_0: end\n");
+    t1.join();
+    t2.join();
+    printf("print_time: end\n");
+}
+
+TEST (print_double, print_doubles) {
+    printf("\nprint_doubles: beg\n");
+    vector<double> x = {1,3,5};
+    vector<double> y = {2,4,6};
+
+    thread tx (print_doubles, ref(x));
+    thread ty (print_doubles, ref(y));
+
+    tx.join();
+    ty.join();
+
+    printf("print_doubles: end\n");
+}
+
+TEST(test_producer_consumer_1, test_producer_consumer) {
+    printf("\ntest_producer_consumer_1: beg\n");
+    IntBuffer b;
+
+    thread t1 (consumer_onetime, ref(b));  //create thread object, configure, and start
+    thread t2 {producer_onetime, ref(b)};
+
+
+    t1.join();
+    t2.join();
+
+    printf("test_producer_consumer_1: end\n");
 }
