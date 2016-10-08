@@ -39,9 +39,10 @@ SYNOPSIS
 
 __author__ = 'wan@google.com (Zhanyong Wan)'
 
+import gtest_test_utils
 import os
 import re
-import gtest_test_utils
+
 
 
 IS_LINUX = os.name == 'posix' and os.uname()[0] == 'Linux'

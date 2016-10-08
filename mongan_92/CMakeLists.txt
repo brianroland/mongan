@@ -15,3 +15,5 @@ add_subdirectory(functions_and_classes_92)
 add_subdirectory(tests_92)
 
 target_link_libraries(run_mongan_92 functions_and_classes_92)
+
+target_link_libraries(run_mongan_92 pthread)

@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.6)
+
 project(mongan)
 
 add_definitions(-std=c++11)
 
-set(SOURCE_FILES main.cpp mongan_92/run_mongan_92.cpp mongan_92/functions_and_classes_92/producer_consumer.cpp mongan_92/functions_and_classes_92/producer_consumer.h mongan_92/master_worker.cpp)
+set(SOURCE_FILES main.cpp)
 add_executable(run_mongan ${SOURCE_FILES})
 
 include_directories(mongan_41)
