@@ -44,3 +44,78 @@ TEST(one_node_with_cycle, one_node) {
     printf("one_node_with_cycle: end()\n");
 }
 
+TEST(three_nodes_with_null, three_nodes) {
+    printf("\nthree_nodes_with_null: beg()\n");
+
+    //nodes with keys 0.0, 1.0, 2.0, the tail points to a null
+    SinglyLinkedList<double> * list = new SinglyLinkedList<double>();
+    list->InsertAfter(nullptr, new double(0.0));
+    list->InsertAfter(list->head(), new double(1.0));
+    list->InsertAfter(list->head(), new double(2.0));
+
+    bool outcome = DoesContainCycle(list);
+
+    printf("DoesContainCycle=%d\n", outcome);
+
+    delete list;
+
+    printf("three_nodes_with_null: end()\n");
+}
+
+TEST(three_nodes_with_cycles, three_nodes) {
+    printf("\nthree_nodes_with_cycle: beg()\n");
+
+    //nodes with keys 0.0, 1.0, 2.0, the tail points to a null
+    SinglyLinkedList<double> * list = new SinglyLinkedList<double>();
+    list->InsertAfter(nullptr, new double(0.0));
+    list->InsertAfter(list->head(), new double(1.0));
+    list->InsertAfter(list->head(), new double(2.0));
+    list->tail()->set_next(list->head()->next());
+
+    bool outcome = DoesContainCycle(list);
+
+    printf("DoesContainCycle=%d\n", outcome);
+
+    delete list;
+
+    printf("three_nodes_with_cycle: end()\n");
+}
+
+TEST(four_nodes_with_null, four_nodes) {
+    printf("\nfour_nodes_with_null: beg()\n");
+
+    //nodes with keys 0.0, 1.0, 2.0, the tail points to a null
+    SinglyLinkedList<double> *list = new SinglyLinkedList<double>();
+    list->InsertAfter(nullptr, new double(0.0));
+    list->InsertAfter(list->head(), new double(1.0));
+    list->InsertAfter(list->head(), new double(2.0));
+    list->InsertAfter(list->head(), new double(3.0));
+
+    bool outcome = DoesContainCycle(list);
+
+    printf("DoesContainCycle=%d\n", outcome);
+
+    delete list;
+
+    printf("four_nodes_with_null: end()\n");
+}
+
+TEST(four_nodes_with_cycles, four_nodes) {
+    printf("\nfour_nodes_with_cycle: beg()\n");
+
+    //nodes with keys 0.0, 1.0, 2.0, the tail points to a null
+    SinglyLinkedList<double> * list = new SinglyLinkedList<double>();
+    list->InsertAfter(nullptr, new double(0.0));
+    list->InsertAfter(list->head(), new double(1.0));
+    list->InsertAfter(list->head(), new double(2.0));
+    list->InsertAfter(list->head(), new double(3.0));
+    list->tail()->set_next(list->head()->next());
+
+    bool outcome = DoesContainCycle(list);
+
+    printf("DoesContainCycle=%d\n", outcome);
+
+    delete list;
+
+    printf("four_nodes_with_cycle: end()\n");
+}
