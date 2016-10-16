@@ -1,12 +1,12 @@
 //
-// Created by Christopher Roland on 9/30/16.
-//
-// Found it useful to make decision diagram for each method,
-// depending on the values of arguments and state of object --> different types of outcome
+// Created by Christopher Roland on 10/16/16.
 //
 
 #ifndef MONGAN_SL_LIST_H
 #define MONGAN_SL_LIST_H
+
+#include <cstdio>
+#include <iostream>
 
 template <class T>
 class SingleLinkNode {
@@ -174,6 +174,5 @@ public:
         return tail_;
     }
 };
-
 
 #endif //MONGAN_SL_LIST_H
