@@ -41,3 +41,13 @@ TEST(test_enumerate_words_0, test_enumerate_words) {
 
     printf("test_extend_word\n");
 }
+
+TEST(test_enumerate_words_1, test_enumerate_words) {
+    printf("\ntest_extend_word\n");
+
+    vector<int> number = {6,7,8};
+
+    EnumerateWords(number);
+
+    printf("test_extend_word\n");
+}
