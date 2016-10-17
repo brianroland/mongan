@@ -4,7 +4,7 @@ project(mongan)
 
 add_definitions(-std=c++11)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp mongan_75/run_mongan_75.cpp)
 add_executable(run_mongan ${SOURCE_FILES})
 
 include_directories(mongan_41)
@@ -36,6 +36,9 @@ add_subdirectory(mongan_62)
 
 include_directories(mongan_74)
 add_subdirectory(mongan_74)
+
+include_directories(mongan_75)
+add_subdirectory(mongan_75)
 
 include_directories(mongan_92)
 add_subdirectory(mongan_92)
