@@ -10,5 +10,9 @@
 using namespace std;
 
 int StringToInt(string s);
+string IntToString(int i);
+int Pow10Int(int n);
 
+int CharToInt(char a);
+char DigitToChar(int i);
 #endif //MONGAN_STRING_TO_INT_H

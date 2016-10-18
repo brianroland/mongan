@@ -40,6 +40,9 @@ add_subdirectory(mongan_61)
 include_directories(mongan_62)
 add_subdirectory(mongan_62)
 
+include_directories(mongan_64)
+add_subdirectory(mongan_64)
+
 include_directories(mongan_74)
 add_subdirectory(mongan_74)
 
