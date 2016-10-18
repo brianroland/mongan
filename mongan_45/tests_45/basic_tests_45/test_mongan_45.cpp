@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include "gtest/gtest.h"
-#include <forward_list>
 #include "flatten_list.h"
 
 using namespace std;
