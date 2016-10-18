@@ -26,14 +26,9 @@ TEST(test_forward_list_0, test_forward_list) {
     x.push_front(1.1);      //m=1
     x.push_front(0.0);      //m=2
 
-    for (forward_list<double>::iterator a=x.begin(); a!=x.end(); ++a) {
-        cout << *a << endl;
-    }
+    for (forward_list<double>::iterator a=x.begin(); a!=x.end(); ++a) { cout << *a << endl; }
 
-    for (auto a : x) {
-        cout << a << endl;
-    }
-
+    for (auto a : x) { cout << a << endl; }
 
     printf("test_forward_list_0: end \n");
 }

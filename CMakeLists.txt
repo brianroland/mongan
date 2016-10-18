@@ -4,7 +4,7 @@ project(mongan)
 
 add_definitions(-std=c++11)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp mongan_45/functions_and_classes_45/flatten_list.h)
 add_executable(run_mongan ${SOURCE_FILES})
 
 include_directories(mongan_41)
@@ -15,6 +15,9 @@ add_subdirectory(mongan_42)
 
 include_directories(mongan_44)
 add_subdirectory(mongan_44)
+
+include_directories(mongan_45)
+add_subdirectory(mongan_45)
 
 include_directories(mongan_47)
 add_subdirectory(mongan_47)

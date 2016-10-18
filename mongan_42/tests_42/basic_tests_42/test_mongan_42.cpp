@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include "gtest/gtest.h"
-#include "null_or_cycle.h"
+#include "sl_list.h"
 
 TEST(test_mongan_42, hello_world) {
     printf("\nhello world\n");

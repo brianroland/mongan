@@ -1,0 +1,5 @@
+add_executable(test_mongan_45 test_mongan_45.cpp test_mongan_45.cpp)
+
+target_link_libraries(test_mongan_45 functions_and_classes_45)
+
+target_link_libraries(test_mongan_45 gtest gtest_main)
